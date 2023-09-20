@@ -1,7 +1,7 @@
 def study_schedule(permanence_period, target_time):
     if target_time is None or not isinstance(target_time, int) or target_time < 0:
         return None
-    
+
     student_count = 0
 
     for period in permanence_period:
