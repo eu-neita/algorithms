@@ -5,8 +5,7 @@ def study_schedule(permanence_period, target_time):
     student_count = 0
 
     for period in permanence_period:
-        # Verifica se o período é válido
-        if not isinstance(period, tuple) or len(period) != 2:
+        if not isinstance(period, tuple) or len(period) != 2 or not isinstance(period[0], int) or not isinstance(period[1], int) or period[0] < 0 or period[1] < 0:
             return None
 
         start, end = period
