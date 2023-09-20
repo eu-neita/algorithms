@@ -1,16 +1,32 @@
+def validate_target_time(target_time):
+    """Validate target_time."""
+    if target_time is None:
+        return False
+    return True
+
+
+def validate_period(period):
+    """Validate period."""
+    if not isinstance(period, tuple) or len(period) != 2:
+        return False
+    if not isinstance(period[0], int) or not isinstance(period[1], int):
+        return False
+    if period[0] < 0 or period[1] < 0:
+        return False
+    return True
+
+
 def study_schedule(permanence_period, target_time):
-    """Faça o código aqui."""
-    if target_time is None or not isinstance(target_time, int) or target_time < 0:
+    """
+    Receives a list.
+    """
+    if not validate_target_time(target_time):
         return None
 
     student_count = 0
 
     for period in permanence_period:
-        if not isinstance(period, tuple) or len(period) != 2:
-            return None
-        if not isinstance(period[0], int) or not isinstance(period[1], int):
-            return None
-        if period[0] < 0 or period[1] < 0:
+        if not validate_period(period):
             return None
 
         start, end = period
