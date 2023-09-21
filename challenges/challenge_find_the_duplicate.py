@@ -1,4 +1,3 @@
-
 def find_duplicate(nums):
 
     set_nums = set()
