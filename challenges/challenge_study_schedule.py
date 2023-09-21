@@ -1,4 +1,9 @@
+"""function study_schedule"""
+
+
 def study_schedule(presence_period, target_time):
+    """function that calculates how many students,
+    are present at a given time"""
     if target_time is None:
         return None
 
